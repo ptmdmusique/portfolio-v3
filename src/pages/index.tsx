@@ -1,3 +1,4 @@
+import { Button } from "ducduchy-react-components";
 import Link from "next/link";
 import { useTheme } from "../stores";
 
@@ -7,13 +8,13 @@ export default function Home() {
   return (
     <div>
       Hello World.{" "}
-      <button
+      <Button
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
         }}
       >
         Toggle theme
-      </button>
+      </Button>
       <br />
       <Link href="/about" className="text-skin-base">
         About
