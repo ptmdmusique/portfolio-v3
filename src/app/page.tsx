@@ -16,7 +16,7 @@ export default function Home() {
         Toggle theme
       </Button> */}
       <br />
-      <Link href="/about" className="text-skin-base">
+      <Link href="/" className="text-skin-base">
         About
       </Link>
       {/* <p>
