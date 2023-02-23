@@ -1,16 +1,15 @@
 // @ts-check
 
+// @ts-ignore
 const withRoutes = require("nextjs-routes/config")();
-
-const { withGlobalCss } = require("next-global-css");
-const withGlobalCssConfig = withGlobalCss();
 
 /**
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
   i18n: { locales: ["en", "vi"], defaultLocale: "en" },
+  reactStrictMode: true,
   experimental: { appDir: true },
 };
 
-module.exports = withGlobalCssConfig(withRoutes(nextConfig));
+module.exports = withRoutes(nextConfig);
