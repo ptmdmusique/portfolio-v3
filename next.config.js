@@ -4,7 +4,10 @@
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  basePath: '/https://github.com/ptmdmusique/portfolio-v3',
-}
+  basePath: "/portfolio-v3",
+  experimental: {
+    appDir: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
