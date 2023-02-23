@@ -16,9 +16,9 @@ export default function Home() {
         Toggle theme
       </Button> */}
       <br />
-      <Link href="/" className="text-skin-base">
+      {/* <Link href="/about" className="text-skin-base">
         About
-      </Link>
+      </Link> */}
       {/* <p>
         {theme === "light" ? (
           <span className="text-skin-base">Light theme</span>
