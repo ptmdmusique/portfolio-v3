@@ -9,8 +9,8 @@ const withGlobalCssConfig = withGlobalCss();
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  basePath: "/portfolio-v3",
   i18n: { locales: ["en", "vi"], defaultLocale: "en" },
+  experimental: { appDir: true },
 };
 
 module.exports = withGlobalCssConfig(withRoutes(nextConfig));
