@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$theme-light: (
+  --text-base: "rgb(17, 90, 81)",
+  --text-primary: "rgb(17, 90, 81)",
+  --text-secondary: "rgb(5, 5, 5)",
+  // TODO: determine this
+  --text-inverted: "rgb(247, 250, 252)",
+  // TODO: determine this
+  --fill: "rgb(83, 178, 255)",
+
+  --background: "rgb(234, 242, 251)",
+  --background-top: "rgb(226, 232, 240)",
+  // TODO: determine this
+  --background-overflow-menu: "rgb(226, 232, 240)",
+  // TODO: determine this
+  --background-active: "rgb(226, 232, 240)",
+
+  // Other
+  --danger: "rgb(169, 30, 41)",
+  --success: "rgb(36, 86, 48)",
+  --warning: "rgb(92, 70, 0)",
+  --info: "rgb(29, 84, 94)",
+  // TODO: determine this
+  --default: "rgb(0, 0, 0)",
+  --exquisite: "rgb(131, 6, 193)",
+  // TODO: determine this
+  --disabled: "rgb(235, 235, 235)",
+
+  --git: "rgb(194, 45, 15)",
+
+  // Brands
+  // TODO: determine this
+  --google: "rgb(207, 67, 50)",
+  // TODO: determine this
+  --yelp: "rgb(194, 23, 2)",
+  // TODO: determine this
+  --facebook: "rgb(55, 83, 149)",
+);
+
+$theme-dark: (
+  --text-base: "rgb(129, 230, 217)",
+  --text-primary: "rgb(129, 230, 217)",
+  --text-secondary: "rgb(214, 214, 214)",
+  // TODO: determine this
+  --text-inverted: "rgb(33, 33, 33)",
+  // TODO: determine this
+  --fill: "rgb(83, 178, 255)",
+
+  --background: "rgb(24, 28, 34)",
+  --background-top: "rgb(34, 40, 49)",
+  // TODO: determine this
+  --background-overflow-menu: "rgb(34, 40, 49)",
+  // TODO: determine this
+  --background-active: "rgb(34, 40, 49)",
+
+  // Other
+  --danger: "rgb(255, 73, 88)",
+  --success: "rgb(115, 245, 145)",
+  --warning: "rgb(253, 212, 76)",
+  --info: "rgb(73, 223, 250)",
+  // TODO: determine this
+  --default: "rgb(232, 230, 227)",
+  --exquisite: "rgb(211, 131, 251)",
+  // TODO: determine this
+  --disabled: "rgb(115, 117, 132)",
+
+  --git: "rgb(241, 99, 70)",
+
+  // Brands
+  --google: "rgb(207, 67, 50)",
+  --yelp: "rgb(194, 23, 2)",
+  --facebook: "rgb(55, 83, 149)",
+);
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Kitty Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+@function get-color-value($color) {
+  @return #{unquote(str-replace(str-replace($color, "rgb(", ""), ")", ""))};
+}
+
+@mixin extract-color-map($map) {
+  @each $key, $value in $map {
+    #{$key}: #{get-color-value($value)};
+  }
+}
+
+.theme-light {
+  @include extract-color-map($theme-light);
+}
+.theme-dark {
+  @include extract-color-map($theme-dark);
+}
+
+$key: display;
+body {
+  @include extract-color-map($theme-light);
+}
