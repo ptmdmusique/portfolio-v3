@@ -24,12 +24,28 @@
 
     > &__desktop {
       @apply hidden;
+
       @screen lg {
-        @apply block;
+        @apply flex flex-col;
+      }
+
+      > .logo-container {
+        @apply flex justify-center items-center;
+        @apply w-full;
+        @apply p-4;
+        max-height: 25vh;
+      }
+
+      > .route-list-container {
+        @apply flex flex-col;
+      }
+
+      > .app-setting-popover {
+        @apply mt-auto;
       }
     }
 
-    > .nav-item {
+    .nav-item {
       @apply text-skin-default text-opacity-90;
       @apply flex justify-center items-center;
       @apply border-t-2 border-transparent;
@@ -37,31 +53,72 @@
       @apply duration-200;
       @apply font-medium;
 
-      > &--active {
-        &.nav-item__home {
-          @apply border-skin-home;
-          @apply text-skin-home;
-        }
+      @screen lg {
+        // Desktop navbar
+        @apply border-r-4 border-t-2 border-t-skin-disabled;
+        @apply w-full;
 
-        &.nav-item__resume {
-          @apply border-skin-resume;
-          @apply text-skin-resume;
-        }
-
-        &.nav-item__projects {
-          @apply border-skin-projects;
-          @apply text-skin-projects;
-        }
-
-        &.nav-item__contact {
-          @apply border-skin-contact;
-          @apply text-skin-contact;
+        &:last-child {
+          @apply border-b-2 border-b-skin-disabled;
         }
       }
 
-      > .nav-item__link {
+      > &--active {
+        &.nav-item__home {
+          @apply border-t-skin-home;
+          @apply text-skin-home;
+          @screen lg {
+            @apply border-t-skin-disabled;
+            @apply border-r-skin-home;
+          }
+        }
+
+        &.nav-item__resume {
+          @apply border-t-skin-resume;
+          @apply text-skin-resume;
+          @screen lg {
+            @apply border-t-skin-disabled;
+            @apply border-r-skin-resume;
+          }
+        }
+
+        &.nav-item__projects {
+          @apply border-t-skin-projects;
+          @apply text-skin-projects;
+          @screen lg {
+            @apply border-t-skin-disabled;
+            @apply border-r-skin-projects;
+          }
+        }
+
+        &.nav-item__contact {
+          @apply border-t-skin-contact;
+          @apply text-skin-contact;
+          @screen lg {
+            @apply border-t-skin-disabled;
+            @apply border-r-skin-contact;
+          }
+        }
+      }
+
+      > .nav-item__link,
+      &.nav-item__cta {
         @apply flex flex-col justify-center items-center;
         @apply w-full h-full;
+
+        @screen lg {
+          @apply flex-row justify-start;
+          @apply text-xl;
+          @apply p-7;
+
+          > .dd-icon {
+            @apply mr-4;
+          }
+        }
+      }
+
+      &.nav-item__cta {
+        @apply rounded-none;
       }
     }
   }

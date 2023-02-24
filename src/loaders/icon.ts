@@ -12,6 +12,8 @@ export const initializeIconList = () => {
     far.faSun,
     far.faMoon,
 
+    fas.faCogs,
+
     fab.faGithub,
     fab.faLinkedin,
 

@@ -12,6 +12,7 @@
     "theme-list": {
       "light": "Light",
       "dark": "Dark"
-    }
+    },
+    "title": "Setting"
   }
 }
