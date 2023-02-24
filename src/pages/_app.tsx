@@ -9,6 +9,10 @@ import { useManageTheme } from "../hooks/useManageTheme";
 import { initializeI18N, initializeIconList } from "../loaders";
 import { ThemeContext } from "../stores/theme-context";
 
+import { Source_Code_Pro } from "@next/font/google";
+
+const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
+
 initializeI18N();
 initializeIconList();
 
@@ -17,13 +21,21 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   useManageLocale();
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <AppHeader />
-      <Navbar />
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${sourceCodePro.style.fontFamily};
+        }
+      `}</style>
 
-      <div className="app-content">
-        <Component {...pageProps} />
-      </div>
-    </ThemeContext.Provider>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <AppHeader />
+        <Navbar />
+
+        <main className="app-content">
+          <Component {...pageProps} />
+        </main>
+      </ThemeContext.Provider>
+    </>
   );
 }
