@@ -1,0 +1,24 @@
+.navbar {
+  @apply bg-skin-top;
+  @apply w-full;
+
+  @apply absolute left-0 bottom-0;
+  @apply h-16;
+
+  @screen lg {
+    @apply h-full;
+  }
+
+  > .mobile-nav-container {
+    @screen lg {
+      @apply hidden;
+    }
+  }
+
+  > .desktop-nav-container {
+    @apply hidden;
+    @screen lg {
+      @apply block;
+    }
+  }
+}

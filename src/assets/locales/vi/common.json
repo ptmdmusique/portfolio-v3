@@ -1,3 +1,9 @@
 {
-  "test": "thử"
+  "test": "thử",
+  "routes": {
+    "home": "Trang chính",
+    "resume": "Lý lịch",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  }
 }

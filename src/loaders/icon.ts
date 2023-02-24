@@ -14,7 +14,7 @@ export const initializeIconList = () => {
     far.faHeart,
     far.faAddressCard,
     far.faLightbulbOn,
-    far.faAddressBook,
+    far.faEnvelope,
   ];
 
   // Set up icon libraries

@@ -1,3 +1,9 @@
 {
-  "test": "test"
+  "test": "test",
+  "routes": {
+    "home": "Home",
+    "resume": "Resume",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
 }

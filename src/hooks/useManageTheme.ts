@@ -4,7 +4,7 @@ import { Theme } from "../data/theme";
 const getThemeString = (theme: Theme) => `theme-${theme}` as const;
 
 export const useManageTheme = () => {
-  const [theme, setTheme] = React.useState<Theme>("light");
+  const [theme, setTheme] = React.useState<Theme>("dark");
   const oldTheme = useRef<Theme | null>(null);
 
   useEffect(() => {

@@ -116,4 +116,6 @@ $theme-dark: (
 $key: display;
 body {
   @include extract-color-map($theme-light);
+  @apply min-h-screen;
+  @apply relative;
 }
