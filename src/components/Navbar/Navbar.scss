@@ -1,8 +1,7 @@
 .navbar {
+  @apply absolute left-0 bottom-0;
   @apply bg-skin-top;
   @apply w-full;
-
-  @apply absolute left-0 bottom-0;
   @apply h-16;
 
   @screen lg {
@@ -29,9 +28,11 @@
 
     > .nav-item {
       @apply flex justify-center items-center;
+      @apply border-t-2 border-transparent;
       @apply grayscale contrast-0;
       @apply w-1/4 h-full;
       @apply duration-200;
+      @apply font-medium;
 
       &__home {
         @apply text-skin-home;
@@ -51,6 +52,22 @@
 
       > &--active {
         @apply grayscale-0 contrast-100;
+
+        &.nav-item__home {
+          @apply border-skin-home;
+        }
+
+        &.nav-item__resume {
+          @apply border-skin-resume;
+        }
+
+        &.nav-item__projects {
+          @apply border-skin-projects;
+        }
+
+        &.nav-item__contact {
+          @apply border-skin-contact;
+        }
       }
 
       > .nav-item__link {
