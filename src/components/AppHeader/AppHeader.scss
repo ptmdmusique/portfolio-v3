@@ -2,11 +2,16 @@
   @apply flex justify-between items-center;
   @apply px-mobile-content;
   @apply bg-skin-top;
+  @apply shadow-md;
   @apply h-16;
 
   .app-header__popover-opener {
     @apply rounded-md;
     @apply px-1;
+  }
+
+  > .logo-container {
+    @apply h-3/4;
   }
 }
 

@@ -1,11 +1,16 @@
+import "./AppHeader.scss";
+
 import { Popover } from "ducduchy-react-components";
 import { AppSettingContent } from "../AppSettingContent/AppSettingContent";
-import "./AppHeader.scss";
+import Image from "next/image";
+import { AppLogo } from "../AppLogo/AppLogo";
 
 export const AppHeader = () => {
   return (
     <div className="app-header">
-      <div>logo</div>
+      <div className="logo-container">
+        <AppLogo showText />
+      </div>
 
       <Popover
         popoverOpenerProps={{

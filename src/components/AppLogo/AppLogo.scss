@@ -1,0 +1,26 @@
+.app-logo {
+  @apply flex items-center;
+  @apply h-full;
+
+  &__logo {
+    @apply h-full w-auto;
+    animation: rotate-360 6s linear infinite;
+    animation-play-state: paused;
+
+    // Spin on hover infinitely
+    &:hover {
+      animation-play-state: running;
+    }
+  }
+
+  &__title {
+    @apply text-skin-base text-xl font-semibold;
+    @apply ml-6;
+  }
+}
+
+@keyframes rotate-360 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
