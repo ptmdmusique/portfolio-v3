@@ -12,6 +12,10 @@ export const resources = {
 } as const;
 
 export const initializeI18N = () => {
+  if (i18n.isInitialized) {
+    return;
+  }
+
   i18n.use(initReactI18next).init({
     returnNull: false,
     debug: getEnv() !== "production",
