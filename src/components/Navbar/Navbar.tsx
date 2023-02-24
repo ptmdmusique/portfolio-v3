@@ -14,17 +14,18 @@ const MobileNavContainer = () => {
   return (
     <ul className="nav-container nav-container__mobile">
       {routePathList.map((routePath) => {
-        const { icon, key, label } = routeInfoMap[routePath];
+        const { iconName, key, label } = routeInfoMap[routePath];
+        const isActive = router.pathname === routePath;
 
         return (
           <li
             key={key}
             className={cx("nav-item", `nav-item__${key}`, {
-              "nav-item--active": router.pathname === routePath,
+              "nav-item--active": isActive,
             })}
           >
             <Link href={routePath} className="nav-item__link">
-              <Icon icon={icon} />
+              <Icon icon={[isActive ? "fas" : "far", iconName]} />
               <p>{t(label)}</p>
             </Link>
           </li>
