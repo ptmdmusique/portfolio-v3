@@ -7,7 +7,6 @@ const withGlobalCssConfig = withGlobalCss();
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  basePath: "/portfolio-v3",
   i18n: { locales: ["en", "vi"], defaultLocale: "en" },
 };
 
