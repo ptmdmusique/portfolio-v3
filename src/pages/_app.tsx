@@ -2,7 +2,7 @@ import "ducduchy-react-components/dist/ducduchy-react-components.cjs.production.
 import "./globals.scss";
 
 import type { AppProps } from "next/app";
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "../components/Navbar/Navbar";
 import { useManageLocale } from "../hooks/useManageLocale";
 import { useManageTheme } from "../hooks/useManageTheme";
 import { initializeI18N, initializeIconList } from "../loaders";

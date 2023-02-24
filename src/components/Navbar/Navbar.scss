@@ -1,0 +1,62 @@
+.navbar {
+  @apply bg-skin-top;
+  @apply w-full;
+
+  @apply absolute left-0 bottom-0;
+  @apply h-16;
+
+  @screen lg {
+    @apply h-full;
+  }
+
+  > .nav-container {
+    @apply h-full;
+
+    > &__mobile {
+      @apply flex items-center;
+
+      @screen lg {
+        @apply hidden;
+      }
+    }
+
+    > &__desktop {
+      @apply hidden;
+      @screen lg {
+        @apply block;
+      }
+    }
+
+    > .nav-item {
+      @apply flex justify-center items-center;
+      @apply grayscale contrast-0;
+      @apply w-1/4 h-full;
+      @apply duration-200;
+
+      &__home {
+        @apply text-skin-home;
+      }
+
+      &__resume {
+        @apply text-skin-resume;
+      }
+
+      &__projects {
+        @apply text-skin-projects;
+      }
+
+      &__contact {
+        @apply text-skin-contact;
+      }
+
+      > &--active {
+        @apply grayscale-0 contrast-100;
+      }
+
+      > .nav-item__link {
+        @apply flex flex-col justify-center items-center;
+        @apply w-full h-full;
+      }
+    }
+  }
+}

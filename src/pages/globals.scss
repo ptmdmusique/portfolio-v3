@@ -31,13 +31,15 @@ $theme-light: (
 
   --git: "rgb(194, 45, 15)",
 
-  // Brands
-  // TODO: determine this
-  --google: "rgb(207, 67, 50)",
-  // TODO: determine this
-  --yelp: "rgb(194, 23, 2)",
-  // TODO: determine this
-  --facebook: "rgb(55, 83, 149)",
+  // Special
+  --linkedin: "rgb(0, 119, 181)",
+  --github: "rgb(0, 0, 0)",
+  --portfolio: "rgb(255, 255, 254)",
+  // Routes
+  --home: "rgb(194, 24, 91)",
+  --resume: "rgb(2, 119, 189)",
+  --projects: "rgb(157, 128, 44)",
+  --contact: "rgb(105, 86, 150)",
 );
 
 $theme-dark: (
@@ -69,10 +71,15 @@ $theme-dark: (
 
   --git: "rgb(241, 99, 70)",
 
-  // Brands
-  --google: "rgb(207, 67, 50)",
-  --yelp: "rgb(194, 23, 2)",
-  --facebook: "rgb(55, 83, 149)",
+  // Special
+  --linkedin: "rgb(5, 149, 226)",
+  --gitHub: "rgb(255, 255, 254)",
+  --portfolio: "rgb(255, 255, 254)",
+  // Routes
+  --home: "rgb(255, 64, 129)",
+  --resume: "rgb(79, 195, 247)",
+  --projects: "rgb(233, 247, 80)",
+  --contact: "rgb(190, 178, 219)",
 );
 
 /// Replace `$search` with `$replace` in `$string`
@@ -116,6 +123,8 @@ $theme-dark: (
 $key: display;
 body {
   @include extract-color-map($theme-light);
+  @apply text-skin-primary;
+  @apply bg-skin-default;
   @apply min-h-screen;
   @apply relative;
 }

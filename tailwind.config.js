@@ -34,6 +34,12 @@ module.exports = {
           secondary: withOpacity("--text-secondary"),
           base: withOpacity("--text-base"),
           inverted: withOpacity("--text-inverted"),
+
+          // Routes
+          home: withOpacity("--home"),
+          resume: withOpacity("--resume"),
+          projects: withOpacity("--projects"),
+          contact: withOpacity("--contact"),
         },
       },
       backgroundColor: {

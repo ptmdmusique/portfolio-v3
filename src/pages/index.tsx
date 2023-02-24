@@ -18,7 +18,7 @@ export default function Home() {
         {t("test")}
       </Button>
       <br />
-      <Link href="/about" className="text-skin-base">
+      <Link href="/contact" className="text-skin-base">
         About
       </Link>
       <p>
