@@ -1,9 +1,17 @@
 {
   "test": "thử",
   "routes": {
-    "home": "Trang chính",
+    "home": "Trang chủ",
     "resume": "Lý lịch",
     "projects": "Dự án",
     "contact": "Liên hệ"
+  },
+  "app-setting": {
+    "language": "Ngôn ngữ",
+    "theme": "Giao diện",
+    "theme-list": {
+      "light": "Sáng",
+      "dark": "Tối"
+    }
   }
 }

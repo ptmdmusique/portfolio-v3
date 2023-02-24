@@ -2,6 +2,7 @@ import "ducduchy-react-components/dist/ducduchy-react-components.cjs.production.
 import "./globals.scss";
 
 import type { AppProps } from "next/app";
+import { AppHeader } from "../components/AppHeader/AppHeader";
 import { Navbar } from "../components/Navbar/Navbar";
 import { useManageLocale } from "../hooks/useManageLocale";
 import { useManageTheme } from "../hooks/useManageTheme";
@@ -17,6 +18,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      <AppHeader />
       <Navbar />
 
       <Component {...pageProps} />

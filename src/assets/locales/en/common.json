@@ -3,7 +3,15 @@
   "routes": {
     "home": "Home",
     "resume": "Resume",
-    "projects": "Projects",
+    "projects": "Project",
     "contact": "Contact"
+  },
+  "app-setting": {
+    "language": "Language",
+    "theme": "Theme",
+    "theme-list": {
+      "light": "Light",
+      "dark": "Dark"
+    }
   }
 }

@@ -50,6 +50,10 @@ module.exports = {
           active: withOpacity("--background-active"),
         },
       },
+
+      padding: {
+        "mobile-content": `var(--mobile-content-padding)`,
+      },
     },
   },
   variants: {

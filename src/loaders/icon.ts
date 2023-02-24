@@ -7,6 +7,11 @@ import * as far from "@fortawesome/pro-regular-svg-icons";
 
 export const initializeIconList = () => {
   const iconList = [
+    far.faEllipsisV,
+
+    far.faSun,
+    far.faMoon,
+
     fab.faGithub,
     fab.faLinkedin,
 

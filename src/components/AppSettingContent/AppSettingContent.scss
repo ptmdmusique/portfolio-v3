@@ -1,0 +1,24 @@
+.app-setting-content {
+  @apply divide-y divide-skin-disabled;
+
+  > .app-setting-content__section {
+    @apply py-4;
+
+    > .title {
+      @apply font-medium;
+      @apply pl-6;
+      @apply mb-4;
+      filter: opacity(0.7);
+    }
+
+    > .cta {
+      @apply justify-start;
+      @apply rounded-none;
+      @apply w-full;
+
+      > .icon {
+        @apply mr-4;
+      }
+    }
+  }
+}

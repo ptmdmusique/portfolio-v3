@@ -1,0 +1,17 @@
+.app-header {
+  @apply flex justify-between items-center;
+  @apply px-mobile-content;
+  @apply bg-skin-top;
+  @apply h-16;
+
+  .app-header__popover-opener {
+    @apply rounded-md;
+    @apply px-1;
+  }
+}
+
+.app-header__popover-panel {
+  @apply bg-skin-top;
+  @apply shadow-md;
+  @apply w-64;
+}

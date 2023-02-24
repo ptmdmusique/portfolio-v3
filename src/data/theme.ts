@@ -1,1 +1,2 @@
-export type Theme = "light" | "dark";
+export const themeList = ["light", "dark"] as const;
+export type Theme = typeof themeList[number];
