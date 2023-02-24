@@ -5,6 +5,10 @@
   @apply shadow-md;
   @apply h-16;
 
+  @screen lg {
+    @apply hidden;
+  }
+
   .app-header__popover-opener {
     @apply rounded-md;
     @apply px-1;

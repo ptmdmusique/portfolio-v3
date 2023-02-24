@@ -6,7 +6,9 @@
   @apply h-16;
 
   @screen lg {
-    @apply h-full;
+    @apply h-full w-64;
+    @apply shrink-0;
+    @apply static;
   }
 
   > .nav-container {

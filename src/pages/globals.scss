@@ -134,4 +134,23 @@ body {
   --primary-font: "Source Code Pro";
   --mobile-content-padding: theme(padding.6);
   font-family: var(--primary-font);
+
+  #__next {
+    @apply w-full h-screen;
+    @apply pb-16; // ! same as footer height
+
+    @screen lg {
+      @apply flex;
+      @apply pb-0;
+    }
+
+    > .app-content {
+      @apply overflow-y-auto overflow-x-hidden;
+      height: calc(100vh - 8rem); // ! header + footer height
+
+      @screen lg {
+        @apply h-screen;
+      }
+    }
+  }
 }
