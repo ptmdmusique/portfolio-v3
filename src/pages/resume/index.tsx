@@ -1,12 +1,12 @@
 import "./index.scss";
 
+import { Transition } from "@headlessui/react";
 import { Button } from "ducduchy-react-components";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useScroll } from "react-use";
+import { workData } from "../../data/resume";
 import { PageLayout } from "../../views/PageLayout";
-import { workData } from "./data";
-import { Transition } from "@headlessui/react";
 
 export default function ResumePage() {
   const { t } = useTranslation();
@@ -25,7 +25,15 @@ export default function ResumePage() {
         scrollRef.current = ele;
       }}
     >
-      <h1 className="page-title">{t("pages.resume.title")}</h1>
+      <h1 className="page-title">
+        <a
+          href="https://www.youtube.com/watch?v=kSNYTZXj_G8&ab_channel=1theK%28%EC%9B%90%EB%8D%94%EC%BC%80%EC%9D%B4%29"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("pages.resume.title")}
+        </a>
+      </h1>
 
       <ul className="content-container">
         {workData.map(({ date, description, title }, index) => (

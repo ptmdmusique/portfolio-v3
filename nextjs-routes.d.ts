@@ -9,7 +9,6 @@ declare module "nextjs-routes" {
     | StaticRoute<"/contact">
     | StaticRoute<"/">
     | StaticRoute<"/projects">
-    | StaticRoute<"/resume/data">
     | StaticRoute<"/resume">;
 
   interface StaticRoute<Pathname> {

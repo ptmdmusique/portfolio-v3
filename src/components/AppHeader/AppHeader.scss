@@ -12,6 +12,10 @@
   .app-header__popover-opener {
     @apply rounded-md;
     @apply px-1;
+
+    > .dd-icon {
+      @apply mr-0;
+    }
   }
 
   > .logo-container {

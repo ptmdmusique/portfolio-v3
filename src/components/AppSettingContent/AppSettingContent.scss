@@ -1,5 +1,8 @@
 .app-setting-content {
   @apply divide-y divide-skin-disabled;
+  @apply bg-skin-default;
+  @apply rounded-md;
+  @apply shadow-md;
 
   > .app-setting-content__section {
     @apply py-4;
