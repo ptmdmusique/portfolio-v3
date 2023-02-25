@@ -8,17 +8,25 @@
     },
     "title": "Setting"
   },
+  "common": {
+    "toTop": "Back to top"
+  },
   "pages": {
     "about": {
-      "seo-title": "About me!",
-      "seo-description": "A small description of myself",
-      "title": "HELLO WORLD!",
-      "credit": "Background picture by",
       "about-content": {
         "name": "$ fullname ↵ Duc Phan",
-        "role": "$ role ↵ full-stack Developer",
+        "role": "$ role ↵ full-stack developer",
         "skills": "$ skills ↵ martial-arting, nonsense typing, piano hitting"
-      }
+      },
+      "credit": "Background picture by",
+      "seo-title": "About me!",
+      "seo-description": "A small description of myself",
+      "title": "HELLO WORLD!"
+    },
+    "resume": {
+      "title": "My wandering journey",
+      "seo-title": "My resume",
+      "seo-description": "My wandering journey"
     }
   },
   "routes": {

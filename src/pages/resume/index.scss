@@ -1,0 +1,51 @@
+.resume-page {
+  @apply p-mobile-content;
+  @apply relative;
+
+  > .page-title {
+    @apply text-skin-primary;
+    @apply text-xl;
+    @apply mb-4;
+  }
+
+  > .content-container {
+    @apply divide-y divide-skin-disabled;
+
+    > .section {
+      @apply py-4;
+      &:first-child {
+        @apply pt-0;
+      }
+
+      > .date {
+        @apply text-sm text-skin-secondary text-opacity-80;
+      }
+
+      > .description-container {
+        @apply mt-2;
+
+        > * {
+          &::before {
+            @apply text-sm text-skin-warning font-bold;
+            @apply mr-2;
+            content: "*";
+          }
+        }
+      }
+    }
+  }
+
+  > .to-top-cta-container {
+    @apply fixed left-4;
+    top: calc(100vh - 8rem + 0.5rem); // ! header + footer + some padding
+
+    > .to-top-cta {
+      @apply w-12 h-12 p-2;
+      @apply text-lg;
+
+      > .dd-icon {
+        @apply mr-0;
+      }
+    }
+  }
+}

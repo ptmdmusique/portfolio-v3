@@ -53,6 +53,7 @@ module.exports = {
 
       padding: {
         "mobile-content": `var(--mobile-content-padding)`,
+        "desktop-content": `var(--desktop-content-padding)`,
       },
     },
   },

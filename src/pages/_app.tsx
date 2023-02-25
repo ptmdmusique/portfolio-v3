@@ -31,9 +31,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <AppHeader />
         <Navbar />
 
-        <main className="app-content">
-          <Component {...pageProps} />
-        </main>
+        <Component {...pageProps} />
       </ThemeContext.Provider>
     </>
   );

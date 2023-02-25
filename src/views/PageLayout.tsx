@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import cx from "classnames";
 import Head from "next/head";
 
@@ -8,16 +8,34 @@ interface PageLayoutProps {
 
   pageTitle: string;
   pageDescription?: string;
+
+  /**
+   * This className control the standard layout of the app
+   *
+   * Disable it to use custom layout
+   */
+  addAppContentClassName?: boolean;
 }
 
-export const PageLayout = ({
-  children,
-  pageClassName,
-  pageTitle,
-  pageDescription,
-}: PageLayoutProps) => {
-  return (
-    <div className={cx("page-layout", pageClassName)}>
+export const PageLayout = forwardRef<HTMLElement, PageLayoutProps>(
+  (
+    {
+      children,
+      pageClassName,
+      pageTitle,
+      pageDescription,
+      addAppContentClassName = true,
+    },
+    ref,
+  ) => (
+    <main
+      ref={ref}
+      className={cx(
+        { "app-content": addAppContentClassName },
+        "page-layout",
+        pageClassName,
+      )}
+    >
       <Head>
         <title>{pageTitle}</title>
 
@@ -28,6 +46,8 @@ export const PageLayout = ({
       </Head>
 
       {children}
-    </div>
-  );
-};
+    </main>
+  ),
+);
+
+PageLayout.displayName = "PageLayout";

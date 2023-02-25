@@ -130,6 +130,7 @@ body {
   @apply relative;
 
   --mobile-content-padding: theme(padding.6);
+  --desktop-content-padding: theme(padding.16);
 
   #__next {
     @apply w-full h-screen;

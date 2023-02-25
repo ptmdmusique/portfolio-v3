@@ -11,6 +11,7 @@ export const initializeIconList = () => {
   library.add(
     ...[
       far.faEllipsisV,
+      fas.faTriangle,
 
       far.faSun,
       far.faMoon,
