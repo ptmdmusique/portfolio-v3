@@ -76,11 +76,15 @@
         "go": "Đi",
         "source": "Nguồn"
       },
+      "seo-title": "Dự án của tui",
+      "seo-description": "Mồ hôi và nước mắt của tui",
       "status": {
         "alive": "Ế, đang chạy nè!",
         "constructing": "Đang xây dựng",
         "down": "Sập rùi"
-      }
+      },
+      "title-fun": "Dự án nhảm",
+      "title-professional": "Dự án chuyên nghiệp"
     },
     "resume": {
       "title": "Hành trình lang thang của tui",

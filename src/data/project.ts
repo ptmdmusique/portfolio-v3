@@ -1,6 +1,6 @@
 import { CommonI18NMap } from "./i18n";
 
-interface ProjectProps {
+export interface ProjectProps {
   title: string;
   showProject: boolean;
   liveStatus: "alive" | "constructing" | "down";

@@ -76,11 +76,15 @@
         "go": "Go",
         "source": "Source"
       },
+      "seo-title": "My projects",
+      "seo-description": "My blood, sweat and tears",
       "status": {
         "alive": "It's alive!",
         "constructing": "Under construction",
         "down": "Unavailable "
-      }
+      },
+      "title-fun": "Fun projects",
+      "title-professional": "Professional projects"
     },
     "resume": {
       "title": "My wandering journey",
