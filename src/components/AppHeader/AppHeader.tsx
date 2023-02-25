@@ -1,10 +1,9 @@
 import "./AppHeader.scss";
 
 import { Popover } from "ducduchy-react-components";
-import { AppSettingContent } from "../AppSettingContent/AppSettingContent";
-import Image from "next/image";
-import { AppLogo } from "../AppLogo/AppLogo";
 import { useTranslation } from "react-i18next";
+import { AppLogo } from "../AppLogo/AppLogo";
+import { AppSettingContent } from "../AppSettingContent/AppSettingContent";
 
 export const AppHeader = () => {
   const { t } = useTranslation();
