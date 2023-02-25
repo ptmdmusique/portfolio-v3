@@ -53,26 +53,40 @@ export const workData = [
   {
     date: "Jan. 2018 – Apr. 2021",
     title: "Freelancer Software Dev., Self Publish",
-    description:
-      "Full stack web and mobile app developer. Unity 3D Game maker. Make 2D pixel art. Design and implement animation for games. Edit videos. Integrate and manage cloud solutions using Firebase and Amazon Web Service",
+    description: [
+      "Full stack web and mobile app developer.",
+      "Unity 3D Game maker. Make 2D pixel art.",
+      "Design and implement animation for games.",
+      "Edit videos. Integrate and manage cloud solutions using Firebase and Amazon Web Service",
+    ],
   },
   {
     date: "Oct. 2018 - Apr. 2021",
     title: "Desktop Service Technician, Portland State University",
-    description:
-      "Troubleshoot and fix computer issues. Perform customer services. Reimage and install Windows/Mac software.",
+    description: [
+      "Troubleshoot and fix computer issues.",
+      "Perform customer services.",
+      "Reimage and install Windows/Mac software.",
+    ],
   },
   {
     date: "Apr. 2016 - Jun. 2019",
     title:
       "Senior Taekwondo Instructor, Master Eric's World Champion Taekwondo",
-    description:
-      "Instruct student in many intense physical activities. Boost student's self-confidence. Help lead team in many tournaments. Promote teamwork",
+    description: [
+      "Instruct student in many intense physical activities.",
+      "Boost student's self-confidence.",
+      "Help lead team in many tournaments.",
+      "Promote teamwork and leadership skills.",
+    ],
   },
   {
     date: "Feb. 2017 - Jun. 2018",
     title: "Math & Computer Science Lab Tutor, Portland Community College",
-    description:
-      "Help student with homework. Teach and encourage students to solve problems creatively. Help with many electrical engineer labs, specifically in implementing Arduino robots",
+    description: [
+      "Help student with homework.",
+      "Teach and encourage students to solve problems creatively.",
+      "Help with many electrical engineer labs, specifically in implementing Arduino robots",
+    ],
   },
 ] as const satisfies readonly WorkDataType[];

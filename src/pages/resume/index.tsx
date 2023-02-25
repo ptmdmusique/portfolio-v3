@@ -31,7 +31,7 @@ export default function ResumePage() {
         {workData.map(({ date, description, title }, index) => (
           <li key={index} className="section">
             <div className="date">{date}</div>
-            <h2>{title}</h2>
+            <h2 className="title">{title}</h2>
 
             <ul className="description-container">
               {Array.isArray(description) ? (
@@ -45,7 +45,7 @@ export default function ResumePage() {
       </ul>
 
       <Transition
-        show={y > 100}
+        show={y > 128}
         enter="transition-opacity duration-200"
         enterFrom="opacity-0"
         enterTo="opacity-100"

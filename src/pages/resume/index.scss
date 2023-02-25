@@ -1,11 +1,19 @@
 .resume-page {
-  @apply p-mobile-content;
+  @apply p-mobile-content pb-desktop-content;
   @apply relative;
+
+  @screen lg {
+    @apply px-desktop-content;
+  }
 
   > .page-title {
     @apply text-skin-primary;
     @apply text-xl;
     @apply mb-4;
+
+    @screen lg {
+      @apply text-4xl;
+    }
   }
 
   > .content-container {
@@ -19,6 +27,15 @@
 
       > .date {
         @apply text-sm text-skin-secondary text-opacity-80;
+        @screen lg {
+          @apply text-base;
+        }
+      }
+
+      > .title {
+        @screen lg {
+          @apply text-lg;
+        }
       }
 
       > .description-container {
@@ -37,11 +54,21 @@
 
   > .to-top-cta-container {
     @apply fixed left-4;
-    top: calc(100vh - 8rem + 0.5rem); // ! header + footer + some padding
+    bottom: calc(4rem + 0.5rem); // ! footer height + some padding
+
+    @screen lg {
+      @apply bottom-4;
+      left: calc(16rem + 1rem); // ! sidebar width + some padding
+    }
 
     > .to-top-cta {
       @apply w-12 h-12 p-2;
       @apply text-lg;
+
+      @screen lg {
+        @apply w-16 h-16 p-3;
+        @apply text-2xl;
+      }
 
       > .dd-icon {
         @apply mr-0;
