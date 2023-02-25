@@ -1,6 +1,7 @@
 import "ducduchy-react-components/dist/ducduchy-react-components.cjs.production.min.css";
 import "./globals.scss";
 
+import { Inconsolata } from "@next/font/google";
 import type { AppProps } from "next/app";
 import { AppHeader } from "../components/AppHeader/AppHeader";
 import { Navbar } from "../components/Navbar/Navbar";
@@ -9,9 +10,7 @@ import { useManageTheme } from "../hooks/useManageTheme";
 import { initializeI18N, initializeIconList } from "../loaders";
 import { ThemeContext } from "../stores/theme-context";
 
-import { Source_Code_Pro } from "@next/font/google";
-
-const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
+const inconsolata = Inconsolata({ subsets: ["latin"] });
 
 initializeI18N();
 initializeIconList();
@@ -24,7 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <style jsx global>{`
         html {
-          font-family: ${sourceCodePro.style.fontFamily};
+          font-family: ${inconsolata.style.fontFamily};
         }
       `}</style>
 

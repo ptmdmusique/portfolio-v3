@@ -1,11 +1,4 @@
 {
-  "test": "test",
-  "routes": {
-    "home": "Home",
-    "resume": "Resume",
-    "projects": "Project",
-    "contact": "Contact"
-  },
   "app-setting": {
     "language": "Language",
     "theme": "Theme",
@@ -14,5 +7,24 @@
       "dark": "Dark"
     },
     "title": "Setting"
+  },
+  "pages": {
+    "about": {
+      "seo-title": "About me!",
+      "seo-description": "A small description of myself",
+      "title": "HELLO WORLD!",
+      "credit": "Background picture by",
+      "about-content": {
+        "name": "$ fullname ↵ Duc Phan",
+        "role": "$ role ↵ full-stack Developer",
+        "skills": "$ skills ↵ martial-arting, nonsense typing, piano hitting"
+      }
+    }
+  },
+  "routes": {
+    "home": "Home",
+    "resume": "Resume",
+    "projects": "Project",
+    "contact": "Contact"
   }
 }

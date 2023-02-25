@@ -1,11 +1,4 @@
 {
-  "test": "thử",
-  "routes": {
-    "home": "Trang chủ",
-    "resume": "Lý lịch",
-    "projects": "Dự án",
-    "contact": "Liên hệ"
-  },
   "app-setting": {
     "language": "Ngôn ngữ",
     "theme": "Giao diện",
@@ -14,5 +7,24 @@
       "dark": "Tối"
     },
     "title": "Tùy chỉnh"
+  },
+  "pages": {
+    "about": {
+      "seo-title": "Một chút ít về tui!",
+      "seo-description": "Mô tả chung về tui",
+      "title": "CHÀO THẾ GIỚI!",
+      "credit": "Hình nền được tạo ra bởi",
+      "about-content": {
+        "name": "$ tên ↵ Phan Thanh Minh Đức",
+        "role": "$ nghề ↵ code dạo",
+        "skills": "$ kĩ-năng ↵ đánh người, gõ phím bậy, phá piano"
+      }
+    }
+  },
+  "routes": {
+    "home": "Trang chủ",
+    "resume": "Lý lịch",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
   }
 }

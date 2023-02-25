@@ -142,6 +142,7 @@ body {
 
     > .app-content {
       @apply overflow-y-auto overflow-x-hidden;
+      @apply w-full;
       height: calc(100vh - 8rem); // ! header + footer height
 
       @screen lg {

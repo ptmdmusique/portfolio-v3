@@ -12,13 +12,14 @@ export const resources = {
 } as const;
 
 export const initializeI18N = () => {
-  if (i18n.isInitialized) {
+  const isNotInProd = getEnv() !== "production";
+  if (i18n.isInitialized && !isNotInProd) {
     return;
   }
 
   i18n.use(initReactI18next).init({
     returnNull: false,
-    debug: getEnv() !== "production",
+    debug: !isNotInProd,
     fallbackLng: "en",
     ns: ["common"],
     defaultNS,
