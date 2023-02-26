@@ -1,11 +1,13 @@
 import * as fab from "@fortawesome/free-brands-svg-icons";
 import * as fas from "@fortawesome/pro-solid-svg-icons";
 // import * as fal from "@fortawesome/pro-light-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import * as far from "@fortawesome/pro-regular-svg-icons";
 // import * as fad from "@fortawesome/pro-duotone-svg-icons";
 
 // https://github.com/FortAwesome/Font-Awesome/issues/19348
-const { library } = require("@fortawesome/fontawesome-svg-core");
+const { library, config } = require("@fortawesome/fontawesome-svg-core");
+config.autoAddCss = false;
 
 export const initializeIconList = () => {
   library.add(
