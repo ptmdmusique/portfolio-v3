@@ -6,6 +6,7 @@
 // prettier-ignore
 declare module "nextjs-routes" {
   export type Route =
+    | StaticRoute<"/api/form">
     | StaticRoute<"/contact">
     | StaticRoute<"/">
     | StaticRoute<"/projects">

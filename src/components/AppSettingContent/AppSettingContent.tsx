@@ -44,7 +44,7 @@ export const AppSettingContent = () => {
             className="cta"
             borderType="plain"
             onClick={() => router.push({ pathname, query }, asPath, { locale })}
-            colorType={locale === router.locale ? "primary" : "secondary"}
+            colorType={locale === router.locale ? "primary" : "neutral"}
           >
             <p>{getTextFromLocale(locale)}</p>
           </Button>
@@ -60,7 +60,7 @@ export const AppSettingContent = () => {
             className="cta"
             borderType="plain"
             onClick={() => setTheme(theme)}
-            colorType={theme === curTheme ? "primary" : "secondary"}
+            colorType={theme === curTheme ? "primary" : "neutral"}
             icon={["far", theme === "dark" ? "moon" : "sun"]}
           >
             <p>{t(`app-setting.theme-list.${theme}`)}</p>

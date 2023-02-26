@@ -25,6 +25,7 @@ export const AppLogo = ({
         width={width}
         height={height}
         unoptimized={unoptimized}
+        priority
       />
 
       {showText && <h1 className="app-logo__title">Duc Duchy</h1>}

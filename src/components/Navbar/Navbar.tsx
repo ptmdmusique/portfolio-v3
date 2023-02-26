@@ -1,15 +1,15 @@
 import "./Navbar.scss";
 
-import { Icon, Popover } from "ducduchy-react-components";
-import { routeInfoMap, routePathList } from "./data";
-import Link from "next/link";
-import { useTranslation } from "react-i18next";
 import cx from "classnames";
+import { Icon, Popover } from "ducduchy-react-components";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import { AppLogo } from "../AppLogo/AppLogo";
-import { useMedia } from "react-use";
-import { AppSettingContent } from "../AppSettingContent/AppSettingContent";
 import { createRef, forwardRef, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useMedia } from "react-use";
+import { AppLogo } from "../AppLogo/AppLogo";
+import { AppSettingContent } from "../AppSettingContent/AppSettingContent";
+import { RoutePath, routeInfoMap, routePathList } from "./data";
 
 const breakpoints = {
   sm: 640,
@@ -60,7 +60,9 @@ const RoutePathList = ({ isLg }: { isLg: boolean }) => {
   useEffect(() => {
     // If isLg, use top position of nav item, else use left
     const activeItem =
-      listItemRefList.current[routePathList.indexOf(router.pathname)]?.current;
+      listItemRefList.current[
+        routePathList.indexOf(router.pathname as RoutePath)
+      ]?.current;
 
     if (activeItem) {
       const position = isLg
@@ -90,7 +92,7 @@ const RoutePathList = ({ isLg }: { isLg: boolean }) => {
         );
       })}
 
-      <div
+      <li
         className="nav-indicator"
         style={isLg ? { right: 0, top: position } : { left: position, top: 0 }}
       />

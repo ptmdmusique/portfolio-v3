@@ -24,6 +24,26 @@
       "seo-title": "Một chút ít về tui!",
       "title": "CHÀO THẾ GIỚI!"
     },
+    "contact": {
+      "email": "Email",
+      "error": {
+        "invalid-email": "Email không hợp lệ",
+        "invalid-name": "Tên không hợp lệ",
+        "required": "Không được để trống",
+        "sent-failed": "Gửi thất bại"
+      },
+      "message": "Tin nhắn",
+      "message-placeholder": "✉️ Vài dòng nhắn nhủ cho tui",
+      "name": "Tên",
+      "name-placeholder": "Lê văn Tèo",
+      "reset": "Xóa",
+      "seo-title": "Liên hệ",
+      "seo-description": "Gửi vài dòng nhắn nhủ cho tui",
+      "submit": "Gửi",
+      "submitted": "Đã gửi thành công!",
+      "submitted-with-fake-api-key": "Đã gửi thành công! (Fake API Key)",
+      "title": "Liên hệ với tui"
+    },
     "projects": {
       "description": {
         "Thang": "Đồng hành với Nguyễn Hữu Thắng",

@@ -1,0 +1,56 @@
+.contact-page {
+  @apply p-mobile-content pb-desktop-content;
+  @apply relative;
+
+  @screen lg {
+    @apply px-desktop-content;
+  }
+
+  > .page-title {
+    @apply text-skin-primary font-medium text-xl;
+    @apply text-center;
+    @apply mb-4;
+
+    @screen lg {
+      @apply text-4xl;
+    }
+  }
+
+  > .form-container {
+    @apply grid gap-4;
+
+    > * {
+      @apply w-full;
+
+      > .text-area-container {
+        @apply w-full;
+
+        > textarea {
+          @apply w-full;
+        }
+      }
+    }
+
+    > .cta-container {
+      @apply flex flex-col;
+
+      @screen lg {
+        @apply flex-row;
+      }
+
+      > :first-child {
+        @apply mb-1;
+
+        @screen lg {
+          @apply mb-0 mr-4;
+        }
+      }
+
+      > * {
+        @screen lg {
+          @apply w-64;
+        }
+      }
+    }
+  }
+}

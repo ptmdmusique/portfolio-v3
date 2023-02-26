@@ -25,7 +25,7 @@
       }
 
       > .date {
-        @apply text-sm text-skin-secondary text-opacity-80;
+        @apply text-sm text-skin-base text-opacity-80;
         @screen lg {
           @apply text-base;
         }

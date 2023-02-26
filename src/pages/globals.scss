@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 $theme-light: (
-  --text-base: "rgb(17, 90, 81)",
+  --text-base: "rgb(5, 5, 5)",
   --text-primary: "rgb(17, 90, 81)",
-  --text-secondary: "rgb(5, 5, 5)",
+  --text-secondary: "rgb(17, 90, 81)",
   // TODO: determine this
   --text-inverted: "rgb(247, 250, 252)",
   // TODO: determine this
@@ -43,9 +43,9 @@ $theme-light: (
 );
 
 $theme-dark: (
-  --text-base: "rgb(129, 230, 217)",
+  --text-base: "rgb(250, 250, 250)",
   --text-primary: "rgb(129, 230, 217)",
-  --text-secondary: "rgb(214, 214, 214)",
+  --text-secondary: "rgb(129, 230, 217)",
   // TODO: determine this
   --text-inverted: "rgb(33, 33, 33)",
   // TODO: determine this
@@ -124,6 +124,7 @@ $key: display;
 body {
   @include extract-color-map($theme-light);
   @apply text-skin-default;
+  @apply overflow-x-hidden;
   @apply min-h-screen;
   @apply bg-skin-top;
   @apply relative;

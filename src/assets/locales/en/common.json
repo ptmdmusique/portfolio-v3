@@ -24,6 +24,26 @@
       "seo-title": "About me!",
       "title": "HELLO WORLD!"
     },
+    "contact": {
+      "email": "Email",
+      "error": {
+        "invalid-email": "Invalid email address",
+        "invalid-name": "Invalid name",
+        "required": "Required",
+        "sent-failed": "Failed to send message"
+      },
+      "message": "Message",
+      "message-placeholder": "✉️ What would you like to say to me",
+      "name": "Name",
+      "name-placeholder": "John Doe",
+      "reset": "Reset",
+      "seo-title": "Contact me",
+      "seo-description": "Send me a message",
+      "submit": "Send",
+      "submitted": "Sent successfully!",
+      "submitted-with-fake-api-key": "Sent successfully! (Fake API key)",
+      "title": "Send me a message"
+    },
     "projects": {
       "description": {
         "Thang": "Built with Thang Nguyen",

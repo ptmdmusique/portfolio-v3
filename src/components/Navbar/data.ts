@@ -2,7 +2,11 @@ import { IconProps } from "ducduchy-react-components";
 import { Route } from "nextjs-routes";
 import { CommonI18NKey } from "../../data";
 
-type RoutePath = Route["pathname"];
+// None API routes
+export type RoutePath = Extract<
+  Route["pathname"],
+  "/" | "/resume" | "/projects" | "/contact"
+>;
 
 export const routeInfoMap = {
   "/": {
