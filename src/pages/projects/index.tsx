@@ -27,12 +27,14 @@ interface ProjectCardProps {
   project: ProjectProps;
   doBlur: boolean;
   onFocused: (isFocused: boolean) => void;
+  index: number;
 }
 
 const ProjectCard = ({
   project: { description, imgSrc, techstack, title, href },
   doBlur,
   onFocused,
+  index,
 }: ProjectCardProps) => {
   const { t } = useTranslation();
   const [isFocused, setIsFocused] = useState(false);
@@ -44,7 +46,10 @@ const ProjectCard = ({
   }, [isFocused]);
 
   return (
-    <div className={cx("project-card", { "project-card--blur": doBlur })}>
+    <div
+      className={cx("project-card", { "project-card--blur": doBlur })}
+      style={{ animationDelay: `${index * 0.05}s` }}
+    >
       <ul
         className={cx("description-container", {
           "description-container--focused": isFocused,
@@ -120,13 +125,14 @@ const ProjectSection = ({ projectList, title }: ProjectSectionProps) => (
     <FocusedCardContext.Consumer>
       {({ focusedCardId, setFocusedCardId }) => (
         <ul className="project-list">
-          {projectList.map((info) => {
+          {projectList.map((info, index) => {
             const cardTitle = info.title;
             return (
               <li className="card-container" key={cardTitle}>
                 <ProjectCard
                   project={info}
                   doBlur={focusedCardId != null && focusedCardId !== cardTitle}
+                  index={index}
                   onFocused={(isFocused) =>
                     setFocusedCardId(isFocused ? cardTitle : null)
                   }

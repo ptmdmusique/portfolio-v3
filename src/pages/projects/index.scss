@@ -1,6 +1,5 @@
-@function get-focused-style() {
-  @return calc(100% + 0.5rem);
-}
+$focused-position: calc(100% + 0.5rem);
+$start-y-translate: 2rem;
 
 .project-page {
   @apply p-mobile-content pb-desktop-content;
@@ -42,6 +41,8 @@
           @apply duration-200;
           @apply rounded-lg;
           @apply relative;
+          transform: translateY($start-y-translate);
+          animation: slide-in 0.5s ease-in-out forwards;
 
           &--blur {
             @apply filter blur-sm;
@@ -85,18 +86,18 @@
             @apply shadow-lg;
 
             &--focused {
-              top: get-focused-style();
+              top: $focused-position;
             }
           }
 
           > .content {
+            @apply h-full max-w-full w-full;
             @apply absolute top-0 left-0;
-            @apply h-full max-w-full;
             @apply duration-200;
             @apply p-2 px-4;
 
             &--focused {
-              top: get-focused-style();
+              top: $focused-position;
             }
 
             > .title {
@@ -149,5 +150,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY($start-y-translate);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
