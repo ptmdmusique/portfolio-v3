@@ -41,6 +41,7 @@
           @apply w-full h-full;
           @apply duration-200;
           @apply rounded-lg;
+          @apply shadow-md;
           @apply relative;
 
           &--blur {
