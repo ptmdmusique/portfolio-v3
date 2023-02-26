@@ -38,6 +38,7 @@
 
       > .route-list-container {
         @apply flex flex-col;
+        @apply relative;
       }
 
       > .app-setting-popover {
@@ -48,55 +49,50 @@
     .nav-item {
       @apply text-skin-default text-opacity-90;
       @apply flex justify-center items-center;
-      @apply border-t-2 border-transparent;
       @apply w-1/4 h-full;
       @apply duration-200;
       @apply font-medium;
 
       @screen lg {
         // Desktop navbar
-        @apply border-r-4 border-t-2 border-t-skin-disabled;
+        @apply border-t-2 border-t-skin-disabled;
         @apply w-full;
 
-        &:last-child {
+        &:nth-last-child(2) {
           @apply border-b-2 border-b-skin-disabled;
         }
       }
 
       > &--active {
         &.nav-item__home {
-          @apply border-t-skin-home;
           @apply text-skin-home;
-          @screen lg {
-            @apply border-t-skin-disabled;
-            @apply border-r-skin-home;
+
+          & ~ .nav-indicator {
+            @apply bg-skin-home;
           }
         }
 
         &.nav-item__resume {
-          @apply border-t-skin-resume;
           @apply text-skin-resume;
-          @screen lg {
-            @apply border-t-skin-disabled;
-            @apply border-r-skin-resume;
+
+          & ~ .nav-indicator {
+            @apply bg-skin-resume;
           }
         }
 
         &.nav-item__projects {
-          @apply border-t-skin-projects;
           @apply text-skin-projects;
-          @screen lg {
-            @apply border-t-skin-disabled;
-            @apply border-r-skin-projects;
+
+          & ~ .nav-indicator {
+            @apply bg-skin-projects;
           }
         }
 
         &.nav-item__contact {
-          @apply border-t-skin-contact;
           @apply text-skin-contact;
-          @screen lg {
-            @apply border-t-skin-disabled;
-            @apply border-r-skin-contact;
+
+          & ~ .nav-indicator {
+            @apply bg-skin-contact;
           }
         }
       }
@@ -119,6 +115,17 @@
 
       &.nav-item__cta {
         @apply rounded-none;
+      }
+    }
+
+    .nav-indicator {
+      @apply duration-200 ease-in-out;
+      @apply absolute;
+
+      @apply h-[0.125rem] w-1/4 bg-blue-400;
+
+      @screen lg {
+        @apply w-1 h-1/4;
       }
     }
   }

@@ -78,7 +78,7 @@ $start-y-translate: 2rem;
 
           > .project-image {
             @apply absolute top-0 left-0;
-            @apply brightness-[0.2];
+            @apply brightness-[0.1];
             @apply bg-skin-default;
             @apply w-full h-full;
             @apply duration-200;
@@ -119,6 +119,7 @@ $start-y-translate: 2rem;
               @apply text-gray-50;
 
               > * {
+                @apply select-all;
                 @apply flex;
 
                 &:not(:last-child) {
