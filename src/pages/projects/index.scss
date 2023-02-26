@@ -17,5 +17,118 @@
         @apply text-4xl;
       }
     }
+
+    > .project-list {
+      @apply flex flex-wrap gap-4;
+
+      > .card-container {
+        @apply w-full;
+        aspect-ratio: 2 / 1;
+
+        @screen md {
+          @apply w-72;
+        }
+
+        @screen lg {
+          @apply w-96;
+        }
+
+        > .project-card {
+          @apply w-full h-full;
+          @apply duration-200;
+          @apply rounded-lg;
+          @apply relative;
+          @apply p-2 px-4;
+
+          &--blur {
+            @apply filter blur-sm;
+          }
+
+          > .description-container {
+            @apply absolute left-0 bottom-0;
+            @apply pointer-events-none;
+            @apply bg-skin-default;
+            @apply duration-200;
+            @apply rounded-md;
+            @apply opacity-0;
+            @apply p-2 px-4;
+            @apply w-full;
+            @apply z-0;
+
+            &--focused {
+              @apply pointer-events-auto;
+              @apply opacity-100;
+
+              &:not(.description-container--show-using-z-index) {
+                bottom: calc(100% + 0.25rem);
+              }
+
+              &.description-container--show-using-z-index {
+                @apply z-50;
+              }
+            }
+
+            > *::before {
+              @apply text-yellow-300;
+              @apply mr-2;
+              content: "*";
+            }
+          }
+
+          > .image {
+            @apply brightness-[0.2];
+            @apply absolute inset-0;
+            @apply w-full h-full;
+            @apply rounded-lg;
+          }
+
+          > .content {
+            @apply relative;
+            @apply h-full;
+
+            > .title {
+              @apply text-gray-50 text-lg font-medium;
+              @apply mb-2;
+
+              > a {
+                @apply flex justify-between items-center;
+                @apply underline;
+
+                > p {
+                  @apply truncate;
+                  @apply mr-2;
+                }
+              }
+            }
+
+            > .techstack-container {
+              @apply text-gray-50;
+
+              > * {
+                @apply flex;
+
+                &:not(:last-child) {
+                  @apply mb-1;
+                }
+
+                > .icon {
+                  @apply mr-2;
+                }
+              }
+            }
+
+            > .more-info-cta {
+              @apply absolute right-0 bottom-0;
+              @apply text-xl text-gray-50;
+              @apply p-0 pl-8;
+
+              > .dd-icon {
+                @apply mr-0;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

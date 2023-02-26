@@ -1,11 +1,33 @@
+import { IconProps } from "ducduchy-react-components";
 import { CommonI18NMap } from "./i18n";
+
+export const techStackInfo = {
+  react: { icon: ["fab", "react"], displayName: "React" },
+  firebase: { icon: ["fab", "google"], displayName: "Firebase" },
+  qrScheduling: { icon: ["far", "qrcode"], displayName: "QR Scheduling" },
+  gcp: { icon: ["fab", "google"], displayName: "GCP" },
+  ibmChatbot: { icon: ["far", "comment-smile"], displayName: "IBM Chatbot" },
+  unity: { icon: ["fab", "unity"], displayName: "Unity 3D" },
+  python: { icon: ["fab", "python"], displayName: "Python" },
+  arFoundation: { icon: ["far", "vr-cardboard"], displayName: "AR Foundation" },
+  cSharp: { icon: ["far", "code"], displayName: "C#" },
+  mailchimp: { icon: ["fab", "mailchimp"], displayName: "Mailchimp" },
+  aws: { icon: ["fab", "aws"], displayName: "AWS" },
+  reactNative: { icon: ["fab", "react"], displayName: "React Native" },
+  windowPhone: { icon: ["fab", "windows"], displayName: "Windows Phone" },
+  chemistry: { icon: ["far", "atom-alt"], displayName: "Chemistry" },
+  pixelArt: { icon: ["far", "palette"], displayName: "Pixel Art" },
+} as const satisfies Record<
+  string,
+  { icon: readonly [IconProps["icon"][0], string]; displayName: string }
+>;
 
 export interface ProjectProps {
   title: string;
   showProject: boolean;
   liveStatus: "alive" | "constructing" | "down";
   tagList: string[];
-  techstack: { icon: [string, string]; displayName: string }[];
+  techstack: (keyof typeof techStackInfo)[];
   description: readonly (keyof CommonI18NMap["pages"]["projects"]["description"])[];
   href?: string;
   imgSrc: string;
@@ -19,10 +41,7 @@ export const professionalProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "alive",
     tagList: ["Firebase", "React"],
-    techstack: [
-      { icon: ["fab", "react"], displayName: "React" },
-      { icon: ["fab", "google"], displayName: "Firebase" },
-    ],
+    techstack: ["react", "firebase"],
     description: [
       "saasPlatform",
       "reactStack",
@@ -38,11 +57,7 @@ export const professionalProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "alive",
     tagList: ["Fullstack", "Firebase", "QR Scheduling", "SaaS"],
-    techstack: [
-      { icon: ["fab", "react"], displayName: "React" },
-      { icon: ["fab", "google"], displayName: "Firebase" },
-      { icon: ["far", "qrcode"], displayName: "QR Scheduling" },
-    ],
+    techstack: ["react", "firebase", "qrScheduling"],
     description: [
       "saasPlatform",
       "reactStack",
@@ -58,10 +73,7 @@ export const professionalProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "alive",
     tagList: ["Web App", "Fullstack", "Firebase"],
-    techstack: [
-      { icon: ["fab", "react"], displayName: "React" },
-      { icon: ["fab", "google"], displayName: "Firebase" },
-    ],
+    techstack: ["react", "firebase"],
     description: [
       "quizPlatScale",
       "reactStack",
@@ -75,15 +87,11 @@ export const professionalProjects: ProjectProps[] = [
     imgSrc: getPath("tdn.png"),
   },
   {
-    title: "Insite Agent-based modelling",
+    title: "Insite Agent-based modelling asd",
     showProject: true,
     liveStatus: "alive",
     tagList: ["Web App", "ABM", "Cloud"],
-    techstack: [
-      { icon: ["fab", "react"], displayName: "React" },
-      { icon: ["fab", "google"], displayName: "GCP" },
-      { icon: ["fab", "python"], displayName: "Python" },
-    ],
+    techstack: ["react", "gcp", "python"],
     description: [
       "insiteEnergy",
       "gcpStackCICD",
@@ -100,11 +108,7 @@ export const professionalProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "alive",
     tagList: ["Web App", "Corona Health"],
-    techstack: [
-      { icon: ["fab", "react"], displayName: "React" },
-      { icon: ["fab", "google"], displayName: "Firebase" },
-      { icon: ["far", "comment-smile"], displayName: "IBM Chatbot" },
-    ],
+    techstack: ["react", "firebase", "ibmChatbot"],
     description: [
       "reactStack",
       "capstone",
@@ -117,30 +121,12 @@ export const professionalProjects: ProjectProps[] = [
     href: "https://coronahub.web.app/",
     imgSrc: getPath("capstone.png"),
   },
-  // {
-  //   title: "Duysterz Shoes",
-  //   showProject: true,
-  //   liveStatus: "constructing",
-  //   tagList: ["Web App", "E-commerce"],
-  //   techstack: [
-  //     { icon: ["fab", "react"], displayName: "React" },
-  //     { icon: ["fab", "python"], displayName: "Django" },
-  //     { icon: ["far", "cart-plus"], displayName: "Saleor" },
-  //   ],
-  //   description: ["saleor", "ecommerce", "pwa", "adminDashboard"],
-  //   href: "https://duysterz-shoes-store.web.app/",
-  //   imgSrc: constructingImg,
-  // },
   {
     title: "DT TD",
     showProject: true,
     liveStatus: "constructing",
     tagList: ["Mobile App", "AR"],
-    techstack: [
-      { icon: ["fab", "unity"], displayName: "Unity 3D" },
-      { icon: ["far", "vr-cardboard"], displayName: "AR Foundation" },
-      { icon: ["far", "code"], displayName: "C#" },
-    ],
+    techstack: ["unity", "arFoundation", "cSharp"],
     description: ["unityARStack", "android", "dtTD", "Thang"],
     href: "",
     imgSrc: getPath("dtTD.png"),
@@ -150,12 +136,7 @@ export const professionalProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "alive",
     tagList: ["Web App"],
-    techstack: [
-      { icon: ["fab", "react"], displayName: "React" },
-      { icon: ["fab", "mailchimp"], displayName: "Mailchimp" },
-      { icon: ["fab", "google"], displayName: "Firebase" },
-      { icon: ["fab", "aws"], displayName: "Amazon Web Service" },
-    ],
+    techstack: ["react", "mailchimp", "aws"],
     description: ["reactStack", "mailchimp", "cssStack", "Thy"],
     href: "https://master.d1mu6qk0op5jdp.amplifyapp.com/",
     imgSrc: getPath("apheleia.png"),
@@ -165,11 +146,7 @@ export const professionalProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "down",
     tagList: ["Mobile App", "Taekwondo"],
-    techstack: [
-      { icon: ["fab", "react"], displayName: "React" },
-      { icon: ["fab", "react"], displayName: "React Native" },
-      { icon: ["fab", "google"], displayName: "Firebase" },
-    ],
+    techstack: ["react", "firebase", "reactNative"],
     description: [
       "reactStack",
       "ios",
@@ -189,11 +166,7 @@ export const funProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "down",
     tagList: ["Mobile App", "Window Phone", "Chemistry"],
-    techstack: [
-      { icon: ["fab", "windows"], displayName: "Window Phone" },
-      { icon: ["far", "code"], displayName: "C#" },
-      { icon: ["far", "atom-alt"], displayName: "Chemistry" },
-    ],
+    techstack: ["windowPhone", "cSharp", "chemistry"],
     description: ["forStudent", "chempediaStack", "windowPhone", "Viet"],
     href: "",
     imgSrc: getPath("Chempedia.png"),
@@ -203,11 +176,7 @@ export const funProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "constructing",
     tagList: ["Topdown Shooter", "Unity"],
-    techstack: [
-      { icon: ["fab", "unity"], displayName: "Unity 3D" },
-      { icon: ["far", "code"], displayName: "C#" },
-      { icon: ["far", "palette"], displayName: "Pixel Art" },
-    ],
+    techstack: ["unity", "cSharp", "pixelArt"],
     description: ["pixel", "topdown"],
     href: "",
     imgSrc: getPath("TeddyFighter_preview.png"),
@@ -217,11 +186,7 @@ export const funProjects: ProjectProps[] = [
     showProject: true,
     liveStatus: "down",
     tagList: ["RPG", "Unity"],
-    techstack: [
-      { icon: ["fab", "unity"], displayName: "Unity 3D" },
-      { icon: ["far", "code"], displayName: "C#" },
-      { icon: ["far", "palette"], displayName: "Pixel Art" },
-    ],
+    techstack: ["unity", "cSharp", "pixelArt"],
     description: ["pixel", "rpg"],
     href: "",
     imgSrc: getPath("WhenTheDreamEnds_Preview-min.png"),

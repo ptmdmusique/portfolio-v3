@@ -12,6 +12,8 @@ export const initializeIconList = () => {
     ...[
       far.faEllipsisV,
       fas.faTriangle,
+      far.faArrowUpRightFromSquare,
+      far.faInfoCircle,
 
       far.faSun,
       far.faMoon,
@@ -20,6 +22,20 @@ export const initializeIconList = () => {
 
       fab.faGithub,
       fab.faLinkedin,
+
+      fab.faReact,
+      fab.faGoogle,
+      fab.faUnity,
+      fab.faPython,
+      fab.faMailchimp,
+      fab.faAws,
+      fab.faWindows,
+      far.faAtomAlt,
+      far.faPalette,
+      far.faVrCardboard,
+      far.faCode,
+      far.faQrcode,
+      far.faCommentSmile,
 
       // * Route info
       far.faHeart,
