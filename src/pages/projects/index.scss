@@ -1,5 +1,5 @@
 @function get-focused-style() {
-  @return calc(100% + 0.25rem);
+  @return calc(100% + 0.5rem);
 }
 
 .project-page {
@@ -41,7 +41,6 @@
           @apply w-full h-full;
           @apply duration-200;
           @apply rounded-lg;
-          @apply shadow-md;
           @apply relative;
 
           &--blur {
@@ -56,6 +55,7 @@
             @apply duration-200;
             @apply rounded-md;
             @apply opacity-0;
+            @apply shadow-lg;
             @apply p-2 px-4;
 
             &--focused {
@@ -64,11 +64,12 @@
             }
 
             > .title {
+              @apply text-lg font-medium;
               @apply mb-2;
             }
 
             > *:not(.title)::before {
-              @apply text-yellow-300;
+              @apply text-skin-warning;
               @apply mr-2;
               content: "*";
             }
@@ -81,6 +82,7 @@
             @apply w-full h-full;
             @apply duration-200;
             @apply rounded-lg;
+            @apply shadow-lg;
 
             &--focused {
               top: get-focused-style();
@@ -134,6 +136,11 @@
             @apply text-xl text-gray-50;
             @apply p-0 pl-8;
             @apply z-50;
+
+            &:focus,
+            &:hover {
+              @apply text-skin-primary;
+            }
 
             > .dd-icon {
               @apply mr-0;

@@ -50,7 +50,7 @@ const ProjectCard = ({
           "description-container--focused": isFocused,
         })}
       >
-        <p className="title">{title}</p>
+        <li className="title">{title}</li>
 
         {description.map((desc) => (
           <li key={desc}>{t(`pages.projects.description.${desc}`)}</li>
