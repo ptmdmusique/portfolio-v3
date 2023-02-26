@@ -27,16 +27,12 @@ interface ProjectCardProps {
   project: ProjectProps;
   doBlur: boolean;
   onFocused: (isFocused: boolean) => void;
-
-  /** Only the first-of-the-page card's description container needs to move forward instead of upward */
-  showUsingZIndex: boolean;
 }
 
 const ProjectCard = ({
   project: { description, imgSrc, techstack, title, href },
   doBlur,
   onFocused,
-  showUsingZIndex,
 }: ProjectCardProps) => {
   const { t } = useTranslation();
   const [isFocused, setIsFocused] = useState(false);
@@ -52,11 +48,10 @@ const ProjectCard = ({
       <ul
         className={cx("description-container", {
           "description-container--focused": isFocused,
-          // ! Better to use Portal + top position instead
-          //  since the description container might be big to have the top part hidden
-          "description-container--show-using-z-index": showUsingZIndex,
         })}
       >
+        <p className="title">{title}</p>
+
         {description.map((desc) => (
           <li key={desc}>{t(`pages.projects.description.${desc}`)}</li>
         ))}
@@ -67,10 +62,10 @@ const ProjectCard = ({
         src={imgSrc}
         width={256}
         height={512}
-        className="image"
+        className={cx("project-image", { "project-image--focused": isFocused })}
       />
 
-      <div className="content">
+      <div className={cx("content", { "content--focused": isFocused })}>
         <h3 className="title">
           {href ? (
             <a href={href} target="_blank" rel="noopener noreferrer">
@@ -96,19 +91,19 @@ const ProjectCard = ({
             );
           })}
         </ul>
-
-        <Button
-          icon={["far", "info-circle"]}
-          className="more-info-cta"
-          onFocus={() => !isFocused && setIsFocused(true)}
-          onBlur={() => isFocused && setIsFocused(false)}
-          onMouseOver={() => !isFocused && setIsFocused(true)}
-          onMouseLeave={() => isFocused && setIsFocused(false)}
-          borderType="plain"
-        >
-          <span className="sr-only">{t("common.moreInfo")}</span>
-        </Button>
       </div>
+
+      <Button
+        icon={["far", "info-circle"]}
+        className="more-info-cta"
+        onFocus={() => !isFocused && setIsFocused(true)}
+        onBlur={() => isFocused && setIsFocused(false)}
+        onMouseOver={() => !isFocused && setIsFocused(true)}
+        onMouseLeave={() => isFocused && setIsFocused(false)}
+        borderType="plain"
+      >
+        <span className="sr-only">{t("common.moreInfo")}</span>
+      </Button>
     </div>
   );
 };
@@ -116,28 +111,22 @@ const ProjectCard = ({
 interface ProjectSectionProps {
   projectList: ProjectProps[];
   title: string;
-  isFirstSection?: boolean;
 }
 
-const ProjectSection = ({
-  projectList,
-  title,
-  isFirstSection,
-}: ProjectSectionProps) => (
+const ProjectSection = ({ projectList, title }: ProjectSectionProps) => (
   <section>
     <h1 className="page-title">{title}</h1>
 
     <FocusedCardContext.Consumer>
       {({ focusedCardId, setFocusedCardId }) => (
         <ul className="project-list">
-          {projectList.map((info, index) => {
+          {projectList.map((info) => {
             const cardTitle = info.title;
             return (
               <li className="card-container" key={cardTitle}>
                 <ProjectCard
                   project={info}
                   doBlur={focusedCardId != null && focusedCardId !== cardTitle}
-                  showUsingZIndex={!!isFirstSection && index === 0}
                   onFocused={(isFocused) =>
                     setFocusedCardId(isFocused ? cardTitle : null)
                   }
@@ -170,7 +159,6 @@ export default function ProjectPage() {
         <ProjectSection
           title={t("pages.projects.title-professional")}
           projectList={professionalProjects}
-          isFirstSection
         />
 
         <ProjectSection

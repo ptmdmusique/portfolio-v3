@@ -1,3 +1,7 @@
+@function get-focused-style() {
+  @return calc(100% + 0.25rem);
+}
+
 .project-page {
   @apply p-mobile-content pb-desktop-content;
   @apply relative;
@@ -38,7 +42,6 @@
           @apply duration-200;
           @apply rounded-lg;
           @apply relative;
-          @apply p-2 px-4;
 
           &--blur {
             @apply filter blur-sm;
@@ -47,44 +50,50 @@
           > .description-container {
             @apply absolute left-0 bottom-0;
             @apply pointer-events-none;
+            @apply w-full min-h-full;
             @apply bg-skin-default;
             @apply duration-200;
             @apply rounded-md;
             @apply opacity-0;
             @apply p-2 px-4;
-            @apply w-full;
-            @apply z-0;
 
             &--focused {
               @apply pointer-events-auto;
               @apply opacity-100;
-
-              &:not(.description-container--show-using-z-index) {
-                bottom: calc(100% + 0.25rem);
-              }
-
-              &.description-container--show-using-z-index {
-                @apply z-50;
-              }
             }
 
-            > *::before {
+            > .title {
+              @apply mb-2;
+            }
+
+            > *:not(.title)::before {
               @apply text-yellow-300;
               @apply mr-2;
               content: "*";
             }
           }
 
-          > .image {
+          > .project-image {
+            @apply absolute top-0 left-0;
             @apply brightness-[0.2];
-            @apply absolute inset-0;
             @apply w-full h-full;
+            @apply duration-200;
             @apply rounded-lg;
+
+            &--focused {
+              top: get-focused-style();
+            }
           }
 
           > .content {
-            @apply relative;
-            @apply h-full;
+            @apply absolute top-0 left-0;
+            @apply h-full max-w-full;
+            @apply duration-200;
+            @apply p-2 px-4;
+
+            &--focused {
+              top: get-focused-style();
+            }
 
             > .title {
               @apply text-gray-50 text-lg font-medium;
@@ -116,15 +125,16 @@
                 }
               }
             }
+          }
 
-            > .more-info-cta {
-              @apply absolute right-0 bottom-0;
-              @apply text-xl text-gray-50;
-              @apply p-0 pl-8;
+          > .more-info-cta {
+            @apply absolute right-4 bottom-4;
+            @apply text-xl text-gray-50;
+            @apply p-0 pl-8;
+            @apply z-50;
 
-              > .dd-icon {
-                @apply mr-0;
-              }
+            > .dd-icon {
+              @apply mr-0;
             }
           }
         }

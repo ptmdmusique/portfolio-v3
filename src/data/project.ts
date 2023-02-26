@@ -87,7 +87,7 @@ export const professionalProjects: ProjectProps[] = [
     imgSrc: getPath("tdn.png"),
   },
   {
-    title: "Insite Agent-based modelling asd",
+    title: "Insite Agent-based modelling",
     showProject: true,
     liveStatus: "alive",
     tagList: ["Web App", "ABM", "Cloud"],
