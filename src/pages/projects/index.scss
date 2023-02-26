@@ -76,6 +76,7 @@
           > .project-image {
             @apply absolute top-0 left-0;
             @apply brightness-[0.2];
+            @apply bg-skin-default;
             @apply w-full h-full;
             @apply duration-200;
             @apply rounded-lg;
