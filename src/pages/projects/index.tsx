@@ -160,6 +160,10 @@ export default function ProjectPage() {
       pageTitle={t("pages.projects.seo-title")}
       pageDescription={t("pages.projects.seo-description")}
       pageClassName="project-page"
+      ref={(ele) => {
+        pageLayoutRef.current = ele;
+        scrollRef.current = ele;
+      }}
     >
       <FocusedCardContext.Provider value={{ focusedCardId, setFocusedCardId }}>
         <ProjectSection

@@ -152,6 +152,30 @@ $start-y-translate: 2rem;
       }
     }
   }
+
+  > .to-top-cta-container {
+    @apply fixed left-4;
+    bottom: calc(4rem + 0.5rem); // ! footer height + some padding
+
+    @screen lg {
+      @apply bottom-4;
+      left: calc(16rem + 1rem); // ! sidebar width + some padding
+    }
+
+    > .to-top-cta {
+      @apply w-12 h-12 p-2;
+      @apply text-lg;
+
+      @screen lg {
+        @apply w-16 h-16 p-3;
+        @apply text-2xl;
+      }
+
+      > .dd-icon {
+        @apply mr-0;
+      }
+    }
+  }
 }
 
 @keyframes slide-in {
