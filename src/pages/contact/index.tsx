@@ -192,6 +192,8 @@ export default function ContactPage() {
           state={errors.email ? "error" : undefined}
         />
 
+        {/* // TODO: handle this ignore, not sure why the type is wrong */}
+        {/* @ts-ignore */}
         <TextArea
           label={t("pages.contact.message")}
           placeholder={t("pages.contact.message-placeholder")}
