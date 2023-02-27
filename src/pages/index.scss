@@ -65,7 +65,7 @@
     }
 
     > .page-title {
-      @apply text-yellow-300;
+      @apply text-yellow-300 font-semibold;
       @apply text-2xl;
 
       @screen md {

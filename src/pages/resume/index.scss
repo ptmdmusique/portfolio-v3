@@ -7,7 +7,7 @@
   }
 
   > .page-title {
-    @apply text-skin-primary font-medium text-xl;
+    @apply text-skin-primary font-semibold text-xl;
     @apply mb-4;
 
     @screen lg {
