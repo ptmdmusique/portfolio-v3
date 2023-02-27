@@ -9,6 +9,7 @@ import { useManageLocale } from "../hooks/useManageLocale";
 import { useManageTheme } from "../hooks/useManageTheme";
 import { initializeI18N, initializeIconList } from "../loaders";
 import { ThemeContext } from "../stores/theme-context";
+import Head from "next/head";
 
 const inconsolata = Inconsolata({ subsets: ["latin"] });
 
@@ -26,6 +27,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           font-family: ${inconsolata.style.fontFamily};
         }
       `}</style>
+
+      <Head>
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+      </Head>
 
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <AppHeader />
