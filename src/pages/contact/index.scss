@@ -54,3 +54,40 @@
     }
   }
 }
+
+$color-type: "primary", "secondary", "success", "danger", "warning", "info";
+
+.toast {
+  @apply overflow-hidden whitespace-pre-wrap;
+  @apply bg-skin-default;
+  @apply ease-in-out;
+  @apply fixed top-4;
+  @apply rounded-md;
+  @apply w-64;
+  @apply p-4;
+
+  @each $type in $color-type {
+    &.toast--#{$type} {
+      > .indicator {
+        @apply border-skin-#{$type};
+      }
+    }
+  }
+
+  > .indicator {
+    @apply absolute bottom-0 left-0;
+    @apply border-b-4;
+    @apply h-2 w-full;
+
+    animation: retract-width linear forwards;
+  }
+}
+
+@keyframes retract-width {
+  0% {
+    @apply w-full;
+  }
+  100% {
+    @apply w-0;
+  }
+}

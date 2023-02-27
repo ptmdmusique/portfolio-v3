@@ -41,7 +41,7 @@
       "seo-description": "Send me a message",
       "submit": "Send",
       "submitted": "Sent successfully!",
-      "submitted-with-fake-api-key": "Sent successfully! (Fake API key)",
+      "submitted-with-fake-api-key": "Sent successfully (using fake API key)!",
       "title": "Send me a message"
     },
     "projects": {

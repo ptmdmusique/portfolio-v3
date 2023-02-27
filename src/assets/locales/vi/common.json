@@ -41,7 +41,7 @@
       "seo-description": "Gửi vài dòng nhắn nhủ cho tui",
       "submit": "Gửi",
       "submitted": "Đã gửi thành công!",
-      "submitted-with-fake-api-key": "Đã gửi thành công! (Fake API Key)",
+      "submitted-with-fake-api-key": "Đã gửi thành công (bằng API Key giả)!",
       "title": "Liên hệ với tui"
     },
     "projects": {

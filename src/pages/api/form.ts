@@ -7,11 +7,25 @@ export interface ContactForm {
   message: string;
 }
 
-export type ContactPossibleError = "contact/sent-failed";
+const contactPossibleErrorList = [
+  "contact/sent-failed",
+  "contact/missing-data",
+  "contact/missing-api-key",
+  "contact/sent-with-fake-api-key",
+] as const;
+
+export type ContactPossibleError = typeof contactPossibleErrorList[number];
+
+export interface ResponseDto {
+  error?: ContactPossibleError;
+}
+
+export const isResponseDto = (obj: any): obj is ResponseDto =>
+  contactPossibleErrorList.includes(obj.error);
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse<ResponseDto>,
 ) {
   // Get data submitted in request's body.
   const { email, message, name } = (req.body as ContactForm) ?? {};
@@ -23,15 +37,26 @@ export default async function handler(
     return res.status(400).json({ error: "contact/missing-data" });
   }
 
+  const publicKey = process.env.EMAIL_PUBLIC_KEY;
+  const privateKey = process.env.EMAIL_PRIVATE_KEY;
+  if (publicKey === "placeholder" || privateKey === "placeholder") {
+    return res.status(200).json({ error: "contact/sent-with-fake-api-key" });
+  }
+
+  if (!publicKey || !privateKey) {
+    console.error("Missing API key");
+    return res.status(500).json({ error: "contact/missing-api-key" });
+  }
+
   try {
     await emailjs.send(
       "service_hcg1dhc",
       "template_xfare6g",
       { name, email, message },
-      { publicKey: "jmL_DBi6Yru-bzbRl", privateKey: "xBlQsncnWBmWvemvmyQ_g" },
+      { publicKey, privateKey },
     );
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({});
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "contact/sent-failed" });
