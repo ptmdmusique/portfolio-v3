@@ -43,6 +43,8 @@ export const PageLayout = forwardRef<HTMLElement, PageLayoutProps>(
         {pageDescription && (
           <meta property="og:description" content={pageDescription} />
         )}
+
+        <meta property="og:image" content="https://i.imgur.com/ipcYMd2.png" />
       </Head>
 
       {children}

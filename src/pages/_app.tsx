@@ -53,8 +53,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
         />
-
-        <meta property="og:image" content="https://i.imgur.com/ipcYMd2.png" />
       </Head>
 
       <ThemeContext.Provider value={{ theme, setTheme }}>
