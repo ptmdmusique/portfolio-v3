@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { initializeI18N } from "../loaders/i18n";
 
 export const useManageLocale = () => {
   const { locale } = useRouter();

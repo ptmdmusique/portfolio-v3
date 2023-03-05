@@ -39,13 +39,13 @@ export default async function handler(
 
   const publicKey = process.env.EMAIL_PUBLIC_KEY;
   const privateKey = process.env.EMAIL_PRIVATE_KEY;
-  if (publicKey === "placeholder" || privateKey === "placeholder") {
+  if (
+    !publicKey ||
+    !privateKey ||
+    publicKey === "placeholder" ||
+    privateKey === "placeholder"
+  ) {
     return res.status(200).json({ error: "contact/sent-with-fake-api-key" });
-  }
-
-  if (!publicKey || !privateKey) {
-    console.error("Missing API key");
-    return res.status(500).json({ error: "contact/missing-api-key" });
   }
 
   try {
