@@ -38,7 +38,7 @@ const NavItem = forwardRef<HTMLLIElement, NavItemProps>(
         })}
       >
         <Link href={routePath} className="nav-item__link">
-          <Icon icon={[isActive ? "fas" : "far", iconName]} />
+          <Icon icon={[isActive ? "fas" : "fas", iconName]} />
           <p>{t(label)}</p>
         </Link>
       </li>

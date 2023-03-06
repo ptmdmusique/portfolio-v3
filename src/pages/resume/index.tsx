@@ -63,7 +63,7 @@ export default function ResumePage() {
         className="to-top-cta-container"
       >
         <Button
-          icon={["fas", "triangle"]}
+          icon={["fas", "caret-up"]}
           className="to-top-cta"
           colorType="secondary"
           onClick={() =>

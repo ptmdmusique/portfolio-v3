@@ -16,7 +16,7 @@ export const AppHeader = () => {
 
       <Popover
         popoverOpenerProps={{
-          icon: ["far", "ellipsis-v"],
+          icon: ["fas", "ellipsis-v"],
           borderType: "plain",
           className: "app-header__popover-opener",
           children: <span className="sr-only">{t("app-setting.title")}</span>,

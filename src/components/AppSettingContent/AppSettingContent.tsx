@@ -61,7 +61,7 @@ export const AppSettingContent = () => {
             borderType="plain"
             onClick={() => setTheme(theme)}
             colorType={theme === curTheme ? "primary" : "neutral"}
-            icon={["far", theme === "dark" ? "moon" : "sun"]}
+            icon={["fas", theme === "dark" ? "moon" : "sun"]}
           >
             <p>{t(`app-setting.theme-list.${theme}`)}</p>
           </Button>

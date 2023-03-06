@@ -20,7 +20,7 @@ export const routeInfoMap = {
     key: "resume",
   },
   "/projects": {
-    iconName: "lightbulb-on",
+    iconName: "lightbulb",
     label: "routes.projects",
     key: "projects",
   },

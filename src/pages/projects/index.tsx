@@ -76,7 +76,7 @@ const ProjectCard = ({
             <a href={href} target="_blank" rel="noopener noreferrer">
               <p>{title}</p>
               <Icon
-                icon={["far", "arrow-up-right-from-square"]}
+                icon={["fas", "arrow-up-right-from-square"]}
                 className="fa-fw"
               />
             </a>
@@ -99,7 +99,7 @@ const ProjectCard = ({
       </div>
 
       <Button
-        icon={["far", "info-circle"]}
+        icon={["fas", "info-circle"]}
         className="more-info-cta"
         onFocus={() => !isFocused && setIsFocused(true)}
         onBlur={() => isFocused && setIsFocused(false)}
@@ -188,7 +188,7 @@ export default function ProjectPage() {
         className="to-top-cta-container"
       >
         <Button
-          icon={["fas", "triangle"]}
+          icon={["fas", "caret-up"]}
           className="to-top-cta"
           colorType="secondary"
           onClick={() =>
