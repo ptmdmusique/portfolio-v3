@@ -10,7 +10,8 @@ This is the version 3 of my Portfolio!
 
 1. Clone the repo
 2. Run `npm i` on your terminal
-   - NOTE: I use pro version of Font Awesome, so you need to get your own API key and follow [this](https://fontawesome.com/docs/web/setup/packages) tutorial. Please let me know if you have trouble grading this project.
+   - NOTE: I use pro version of Font Awesome, so you need to get your own API key and follow [this](https://fontawesome.com/docs/web/setup/packages) tutorial.
+   - Switch to branch `free-version` if you don't want to use pro version
 3. `npm run dev` to run the development server
 
 # 🏠📕 Frameworks and Libraries
